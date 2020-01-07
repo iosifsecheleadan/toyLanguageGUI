@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class repository implements repositoryInterface {
@@ -32,6 +33,7 @@ public class repository implements repositoryInterface {
     }
 
     public repository(String logFile) {
+        this.threads = new list<programState>();
         this.logFile = logFile;
         try {
             this.log = new FileWriter(this.logFile, true);
@@ -53,6 +55,17 @@ public class repository implements repositoryInterface {
     @Override
     public programState getCurrentProgram() throws exception{
         return this.threads.get(0);
+    }
+
+    @Override
+    public programState getProgram(Integer ID) throws exception {
+        for(Iterator<programState> it = this.threads.iterator(); it.hasNext(); ) {
+            programState current = it.next();
+            if (ID.equals(current.getID())) {
+                return current;
+            }
+        }
+        throw new exception("No program with ID " + ID.toString());
     }
 
     @Override

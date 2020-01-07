@@ -8,6 +8,7 @@ import model.statement.Statement;
 
 public interface repositoryInterface {
     programState getCurrentProgram() throws exception;
+    programState getProgram(Integer ID) throws exception;
     list<programState> getProgramList();
     void setProgramList(list<programState> threads);
     void addStatement(Statement statement);

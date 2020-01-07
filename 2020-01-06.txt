@@ -1,0 +1,482 @@
+
+
+-----------------------------------------------------------------
+-------------------- Mon 2020-01-06 13:00:55 --------------------
+-----------------------------------------------------------------
+
+Program ID : 1
+Execution Stack :
+[ref(int) v; new v = 20; print(readHeap(v)); writeHeap(v, 30); print((readHeap(v) + 5))]
+Symbol Table :
+{}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 1
+Execution Stack :
+[new v = 20; print(readHeap(v)); writeHeap(v, 30); print((readHeap(v) + 5)), ref(int) v]
+Symbol Table :
+{}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[string varf; varf = test.in; openFile(varf); int varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeFile(varf)]
+Symbol Table :
+{}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[varf = test.in; openFile(varf); int varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeFile(varf), string varf]
+Symbol Table :
+{}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[varf = test.in; openFile(varf); int varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeFile(varf)]
+Symbol Table :
+{varf=}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[openFile(varf); int varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeFile(varf), varf = test.in]
+Symbol Table :
+{varf=}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[openFile(varf); int varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeFile(varf)]
+Symbol Table :
+{varf=test.in}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[int varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeFile(varf), openFile(varf)]
+Symbol Table :
+{varf=test.in}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[int varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeFile(varf)]
+Symbol Table :
+{varf=test.in}
+Output :
+[]
+File Table :
+{test.in=java.io.BufferedReader@623783cd}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeFile(varf), int varc]
+Symbol Table :
+{varf=test.in}
+Output :
+[]
+File Table :
+{test.in=java.io.BufferedReader@623783cd}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeFile(varf)]
+Symbol Table :
+{varf=test.in, varc=0}
+Output :
+[]
+File Table :
+{test.in=java.io.BufferedReader@623783cd}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[print(varc); readFile(varf, varc); print(varc); closeFile(varf), readFile(varf, varc)]
+Symbol Table :
+{varf=test.in, varc=0}
+Output :
+[]
+File Table :
+{test.in=java.io.BufferedReader@623783cd}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[print(varc); readFile(varf, varc); print(varc); closeFile(varf)]
+Symbol Table :
+{test.in=0, varf=test.in, varc=0}
+Output :
+[]
+File Table :
+{test.in=java.io.BufferedReader@623783cd}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[readFile(varf, varc); print(varc); closeFile(varf), print(varc)]
+Symbol Table :
+{test.in=0, varf=test.in, varc=0}
+Output :
+[]
+File Table :
+{test.in=java.io.BufferedReader@623783cd}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[readFile(varf, varc); print(varc); closeFile(varf)]
+Symbol Table :
+{test.in=0, varf=test.in, varc=0}
+Output :
+[0]
+File Table :
+{test.in=java.io.BufferedReader@623783cd}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[print(varc); closeFile(varf), readFile(varf, varc)]
+Symbol Table :
+{test.in=0, varf=test.in, varc=0}
+Output :
+[0]
+File Table :
+{test.in=java.io.BufferedReader@623783cd}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[print(varc); closeFile(varf)]
+Symbol Table :
+{test.in=0, varf=test.in, varc=0}
+Output :
+[0]
+File Table :
+{test.in=java.io.BufferedReader@623783cd}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[closeFile(varf), print(varc)]
+Symbol Table :
+{test.in=0, varf=test.in, varc=0}
+Output :
+[0]
+File Table :
+{test.in=java.io.BufferedReader@623783cd}
+Heap : 
+{}
+
+Program ID : 2
+Execution Stack :
+[closeFile(varf)]
+Symbol Table :
+{test.in=0, varf=test.in, varc=0}
+Output :
+[0, 0]
+File Table :
+{test.in=java.io.BufferedReader@623783cd}
+Heap : 
+{}
+
+Program ID : 3
+Execution Stack :
+[int v; ref(int) a; v = 10; new a = 22; fork(writeHeap(a, 30); v = 32; print(v); print(readHeap(a))); print(v); print(readHeap(a))]
+Symbol Table :
+{}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 3
+Execution Stack :
+[ref(int) a; v = 10; new a = 22; fork(writeHeap(a, 30); v = 32; print(v); print(readHeap(a))); print(v); print(readHeap(a)), int v]
+Symbol Table :
+{}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 3
+Execution Stack :
+[ref(int) a; v = 10; new a = 22; fork(writeHeap(a, 30); v = 32; print(v); print(readHeap(a))); print(v); print(readHeap(a))]
+Symbol Table :
+{v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 3
+Execution Stack :
+[v = 10; new a = 22; fork(writeHeap(a, 30); v = 32; print(v); print(readHeap(a))); print(v); print(readHeap(a)), ref(int) a]
+Symbol Table :
+{v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 3
+Execution Stack :
+[v = 10; new a = 22; fork(writeHeap(a, 30); v = 32; print(v); print(readHeap(a))); print(v); print(readHeap(a))]
+Symbol Table :
+{a=(0, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 3
+Execution Stack :
+[new a = 22; fork(writeHeap(a, 30); v = 32; print(v); print(readHeap(a))); print(v); print(readHeap(a)), v = 10]
+Symbol Table :
+{a=(0, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 3
+Execution Stack :
+[new a = 22; fork(writeHeap(a, 30); v = 32; print(v); print(readHeap(a))); print(v); print(readHeap(a))]
+Symbol Table :
+{a=(0, int), v=10}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 3
+Execution Stack :
+[fork(writeHeap(a, 30); v = 32; print(v); print(readHeap(a))); print(v); print(readHeap(a)), new a = 22]
+Symbol Table :
+{a=(0, int), v=10}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+
+Program ID : 3
+Execution Stack :
+[fork(writeHeap(a, 30); v = 32; print(v); print(readHeap(a))); print(v); print(readHeap(a))]
+Symbol Table :
+{a=(1, int), v=10}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=22}
+
+Program ID : 3
+Execution Stack :
+[print(v); print(readHeap(a)), fork(writeHeap(a, 30); v = 32; print(v); print(readHeap(a)))]
+Symbol Table :
+{a=(1, int), v=10}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=22}
+
+Program ID : 3
+Execution Stack :
+[print(v); print(readHeap(a))]
+Symbol Table :
+{a=(1, int), v=10}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=22}
+
+Program ID : 4
+Execution Stack :
+[writeHeap(a, 30); v = 32; print(v); print(readHeap(a))]
+Symbol Table :
+{a=(1, int), v=10}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=22}
+
+Program ID : 3
+Execution Stack :
+[print(readHeap(a)), print(v)]
+Symbol Table :
+{a=(1, int), v=10}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=22}
+
+Program ID : 4
+Execution Stack :
+[v = 32; print(v); print(readHeap(a)), writeHeap(a, 30)]
+Symbol Table :
+{a=(1, int), v=10}
+Output :
+[10]
+File Table :
+{}
+Heap : 
+{1=22}
+
+Program ID : 3
+Execution Stack :
+[print(readHeap(a))]
+Symbol Table :
+{a=(1, int), v=10}
+Output :
+[10]
+File Table :
+{}
+Heap : 
+{1=22}
+
+Program ID : 4
+Execution Stack :
+[v = 32; print(v); print(readHeap(a))]
+Symbol Table :
+{a=(1, int), v=10}
+Output :
+[10, 22]
+File Table :
+{}
+Heap : 
+{1=30}
+
+Program ID : 4
+Execution Stack :
+[print(v); print(readHeap(a)), v = 32]
+Symbol Table :
+{a=(1, int), v=10}
+Output :
+[10, 22]
+File Table :
+{}
+Heap : 
+{1=30}
+
+Program ID : 4
+Execution Stack :
+[print(v); print(readHeap(a))]
+Symbol Table :
+{a=(1, int), v=32}
+Output :
+[10, 22]
+File Table :
+{}
+Heap : 
+{1=30}
+
+Program ID : 4
+Execution Stack :
+[print(readHeap(a)), print(v)]
+Symbol Table :
+{a=(1, int), v=32}
+Output :
+[10, 22]
+File Table :
+{}
+Heap : 
+{1=30}
+
+Program ID : 4
+Execution Stack :
+[print(readHeap(a))]
+Symbol Table :
+{a=(1, int), v=32}
+Output :
+[10, 22, 32]
+File Table :
+{}
+Heap : 
+{1=30}
+
+Program ID : 6
+Execution Stack :
+[int v; ref(int) a; v = 10; new a = 22; fork(writeHeap(a, 30); v = 32; print(v); print(readHeap(a))); print(v); print(readHeap(a))]
+Symbol Table :
+{}
+Output :
+[]
+File Table :

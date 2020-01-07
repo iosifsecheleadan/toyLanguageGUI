@@ -56,4 +56,9 @@ public class relationalExpression implements Expression {
             } else throw new exception("Expression " + this.first.toString() + " is not an integer");
         } else throw new exception("Expression " + this.second.toString() + " is not an integer");
     }
+
+    @Override
+    public String toString() {
+        return this.first.toString() + " " + this.operator + " " + this.second.toString();
+    }
 }

@@ -1,6 +1,8 @@
 package model.collection.list;
 import exception.exception;
+import javafx.collections.ObservableList;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public interface listInterface<Type> {
@@ -17,4 +19,6 @@ public interface listInterface<Type> {
     String toString();
 
     void append(Type element);
+
+    ArrayList<Type> toArrayList();
 }

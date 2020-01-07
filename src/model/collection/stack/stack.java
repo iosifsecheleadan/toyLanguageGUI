@@ -1,5 +1,6 @@
 package model.collection.stack;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class stack<Type> implements stackInterface<Type> {
@@ -27,5 +28,10 @@ public class stack<Type> implements stackInterface<Type> {
     @Override
     public String toString() {
         return this.stack.toString();
+    }
+
+    @Override
+    public ArrayList<Type> toArrayList() {
+        return new ArrayList<Type>(this.stack);
     }
 }

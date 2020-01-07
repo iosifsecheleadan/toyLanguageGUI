@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/model/collection/pair/pair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/collection/pair/pairInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2019-12-30" beforeDir="false" afterPath="$PROJECT_DIR$/2020-01-06.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/30dec2019.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/controller/controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/controller/controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/controller/controllerInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/controller/controllerInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/collection/list/list.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/collection/list/list.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/collection/list/listInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/collection/list/listInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/collection/stack/stack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/collection/stack/stack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/collection/stack/stackInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/collection/stack/stackInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/expression/relationalExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/expression/relationalExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/repository/repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/repository/repository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/repository/repositoryInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/repository/repositoryInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/view/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/view/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/view/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/controllerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/controllerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/collection/list/list.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/collection/list/list.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/collection/list/listInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/collection/list/listInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/collection/stack/stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/collection/stack/stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/collection/stack/stackInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/collection/stack/stackInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/expression/relationalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/expression/relationalExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/repositoryInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/repositoryInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/sample/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/sample/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,13 +80,27 @@
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1VfI3qSIIBAvalhSwOztQW03WY0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -67,6 +110,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -88,6 +132,9 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="model.collection.pair" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/view" />
       <recent name="$PROJECT_DIR$/src" />
@@ -192,6 +239,12 @@
       <workItem from="1577637528737" duration="295000" />
       <workItem from="1577716285641" duration="4019000" />
       <workItem from="1577720407654" duration="6774000" />
+      <workItem from="1578063637851" duration="15450000" />
+      <workItem from="1578130370075" duration="1203000" />
+      <workItem from="1578302546633" duration="3792000" />
+      <workItem from="1578306762416" duration="700000" />
+      <workItem from="1578307935421" duration="4077000" />
+      <workItem from="1578312498262" duration="2386000" />
     </task>
     <servers />
   </component>
@@ -200,44 +253,53 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="799" height="293" key="GridCell.Tab.0.bottom" timestamp="1577727183410">
+    <state x="934" y="255" width="522" height="383" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578077311663">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state width="799" height="293" key="GridCell.Tab.0.bottom/0.0.1600.900@0.0.1600.900" timestamp="1577727183410" />
-    <state width="799" height="293" key="GridCell.Tab.0.center" timestamp="1577727183410">
+    <state x="934" y="255" width="522" height="383" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.900@0.0.1600.900" timestamp="1578077311663" />
+    <state x="556" y="153" width="478" height="587" key="#com.intellij.ide.util.MemberChooser" timestamp="1578308733797">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state width="799" height="293" key="GridCell.Tab.0.center/0.0.1600.900@0.0.1600.900" timestamp="1577727183410" />
-    <state width="799" height="293" key="GridCell.Tab.0.left" timestamp="1577727183409">
+    <state x="556" y="153" width="478" height="587" key="#com.intellij.ide.util.MemberChooser/0.0.1600.900@0.0.1600.900" timestamp="1578308733797" />
+    <state width="1600" height="237" key="GridCell.Tab.0.bottom" timestamp="1578314883820">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state width="799" height="293" key="GridCell.Tab.0.left/0.0.1600.900@0.0.1600.900" timestamp="1577727183409" />
-    <state width="799" height="293" key="GridCell.Tab.0.right" timestamp="1577727183410">
+    <state width="1600" height="237" key="GridCell.Tab.0.bottom/0.0.1600.900@0.0.1600.900" timestamp="1578314883820" />
+    <state width="1600" height="237" key="GridCell.Tab.0.center" timestamp="1578314883819">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state width="799" height="293" key="GridCell.Tab.0.right/0.0.1600.900@0.0.1600.900" timestamp="1577727183410" />
-    <state width="799" height="293" key="GridCell.Tab.1.bottom" timestamp="1577727183412">
+    <state width="1600" height="237" key="GridCell.Tab.0.center/0.0.1600.900@0.0.1600.900" timestamp="1578314883819" />
+    <state width="1600" height="237" key="GridCell.Tab.0.left" timestamp="1578314883819">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state width="799" height="293" key="GridCell.Tab.1.bottom/0.0.1600.900@0.0.1600.900" timestamp="1577727183412" />
-    <state width="799" height="293" key="GridCell.Tab.1.center" timestamp="1577727183411">
+    <state width="1600" height="237" key="GridCell.Tab.0.left/0.0.1600.900@0.0.1600.900" timestamp="1578314883819" />
+    <state width="1600" height="237" key="GridCell.Tab.0.right" timestamp="1578314883819">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state width="799" height="293" key="GridCell.Tab.1.center/0.0.1600.900@0.0.1600.900" timestamp="1577727183411" />
-    <state width="799" height="293" key="GridCell.Tab.1.left" timestamp="1577727183411">
+    <state width="1600" height="237" key="GridCell.Tab.0.right/0.0.1600.900@0.0.1600.900" timestamp="1578314883819" />
+    <state width="1600" height="293" key="GridCell.Tab.1.bottom" timestamp="1578307227960">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state width="799" height="293" key="GridCell.Tab.1.left/0.0.1600.900@0.0.1600.900" timestamp="1577727183411" />
-    <state width="799" height="293" key="GridCell.Tab.1.right" timestamp="1577727183411">
+    <state width="1600" height="293" key="GridCell.Tab.1.bottom/0.0.1600.900@0.0.1600.900" timestamp="1578307227960" />
+    <state width="1600" height="293" key="GridCell.Tab.1.center" timestamp="1578307227959">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state width="799" height="293" key="GridCell.Tab.1.right/0.0.1600.900@0.0.1600.900" timestamp="1577727183411" />
-    <state x="62" y="193" width="672" height="678" key="search.everywhere.popup" timestamp="1577721244481">
+    <state width="1600" height="293" key="GridCell.Tab.1.center/0.0.1600.900@0.0.1600.900" timestamp="1578307227959" />
+    <state width="1600" height="293" key="GridCell.Tab.1.left" timestamp="1578307227959">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="62" y="193" width="672" height="678" key="search.everywhere.popup/0.0.1600.900@0.0.1600.900" timestamp="1577721244481" />
+    <state width="1600" height="293" key="GridCell.Tab.1.left/0.0.1600.900@0.0.1600.900" timestamp="1578307227959" />
+    <state width="1600" height="293" key="GridCell.Tab.1.right" timestamp="1578307227960">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1600" height="293" key="GridCell.Tab.1.right/0.0.1600.900@0.0.1600.900" timestamp="1578307227960" />
+    <state x="62" y="193" width="672" height="678" key="search.everywhere.popup" timestamp="1578309250409">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="62" y="193" width="672" height="678" key="search.everywhere.popup/0.0.1600.900@0.0.1600.900" timestamp="1578309250409" />
   </component>
 </project>

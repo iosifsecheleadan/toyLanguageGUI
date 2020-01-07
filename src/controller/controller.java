@@ -123,7 +123,8 @@ public class controller implements controllerInterface {
     }
 
 
-    private void garbageCollector(list<programState> stateList) {
+    @Override
+    public void garbageCollector(list<programState> stateList) {
         list<Integer> adresses = this.getAdresses(stateList);
         programState state;
         for(Iterator<programState> it = stateList.iterator(); it.hasNext(); ) {

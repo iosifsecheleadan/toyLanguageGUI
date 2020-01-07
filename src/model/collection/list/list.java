@@ -1,13 +1,17 @@
 package model.collection.list;
 
 import exception.exception;
+import javafx.collections.ObservableList;
 
+import javax.naming.CompositeName;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class list<Type> implements listInterface<Type> {
     private CopyOnWriteArrayList<Type> list;
-    //private ArrayList ArrayList<Type> list;
+    //private ArrayList<Type> list;
 
     public list(CopyOnWriteArrayList<Type> newList){
         this.list = newList;
@@ -68,6 +72,11 @@ public class list<Type> implements listInterface<Type> {
     @Override
     public synchronized void append(Type element) {
         this.list.add(element);
+    }
+
+    @Override
+    public ArrayList<Type> toArrayList() {
+        return new ArrayList<Type>(this.list);
     }
 
     @Override

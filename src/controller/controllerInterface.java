@@ -15,5 +15,7 @@ public interface controllerInterface {
     void clearAll();
     list<programState> removeCompletedProgramStates(list<programState> programStatelist);
 
+    void garbageCollector(list<programState> stateList);
+
     void close();
 }
