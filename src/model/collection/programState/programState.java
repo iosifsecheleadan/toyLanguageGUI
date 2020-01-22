@@ -112,7 +112,7 @@ public class programState {
         return current.execute(this);
     }
 
-    public int getID() {
+    public Integer getID() {
         return this.thisID;
     }
 

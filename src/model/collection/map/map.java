@@ -3,6 +3,7 @@ package model.collection.map;
 import exception.exception;
 import model.collection.list.list;
 
+import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -66,11 +67,18 @@ public class map<Key, Value> implements mapInterface<Key, Value> {
     }
 
     @Override
-    public model.collection.map.map<Key, Value> copy() {
+    public map<Key, Value> copy() {
         ConcurrentHashMap<Key, Value> newMap = new ConcurrentHashMap<Key, Value>();
         for (Key key : this.map.keySet()) {
             newMap.put(key, this.map.get(key));
         }
         return new map<Key, Value>(newMap);
     }
+
+    @Override
+    public HashMap<Key, Value> toHashMap() {
+        return new HashMap<Key, Value>(this.map);
+    }
+
+
 }

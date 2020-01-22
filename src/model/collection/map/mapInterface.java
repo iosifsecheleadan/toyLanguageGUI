@@ -3,6 +3,8 @@ package model.collection.map;
 import exception.exception;
 import model.collection.list.list;
 
+import java.util.HashMap;
+
 public interface mapInterface<Key, Value> {
     int size();
     void put(Key key, Value value);
@@ -13,4 +15,5 @@ public interface mapInterface<Key, Value> {
     boolean has(Key identifier);
     String toString();
     mapInterface<Key, Value> copy();
+    HashMap<Key, Value> toHashMap();
 }

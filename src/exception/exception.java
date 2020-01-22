@@ -7,4 +7,8 @@ public class exception extends Exception {
     public exception() {
         super("an unknown error as occured");
     }
+    @Override
+    public String toString() {
+        return super.getMessage();
+    }
 }

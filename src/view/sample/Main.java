@@ -44,6 +44,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main extends Application {
     private repositoryInterface repo;
@@ -63,7 +64,7 @@ public class Main extends Application {
     TabPane mainTabPane;
     Tab programTab;
     ListView<String> programList;
-    Integer selectedProgramIndex;
+    //Integer selectedProgramIndex;
     Label noProgramStatesTitle;
     TextField noProgramStatesText;
     HBox noProgramsBox;
@@ -139,10 +140,8 @@ public class Main extends Application {
             this.oneStep(); });
         this.allStepButton.setOnMouseClicked(mouseEvent -> {
             this.ctrl.allSteps(); });
-        //this.addProgramButton.setOnMouseClicked(mouseEvent -> {
-        //    this.getProgram(); });
 
-        this.buttonBox = new HBox(this.allStepButton, this.oneStepButton /*, this.addProgramButton*/ );
+        this.buttonBox = new HBox(this.allStepButton, this.oneStepButton);
     }
 
     private void oneStep() {
@@ -151,6 +150,7 @@ public class Main extends Application {
             this.ctrl.oneStep(stateList);
         } catch (exception exception) {
             new Alert(AlertType.ERROR, "An error has occured :\n\t" + exception.getMessage()).showAndWait();
+            return;
         }
         this.ctrl.garbageCollector(stateList);
         this.updateProgramTab();
@@ -206,7 +206,7 @@ public class Main extends Application {
     }
 
     private void instantiateOutputTab() {
-        this.outputList = new ListView<>();
+        this.outputList = new ListView<String>();
         this.outputTab = new Tab("output");
     }
 
@@ -217,7 +217,6 @@ public class Main extends Application {
         this.heapValueColumn = new TableColumn("Value");
         this.heapValueColumn.setCellValueFactory(new PropertyValueFactory<>("second"));
         this.heapTable.getColumns().addAll(this.heapAdressColumn, this.heapValueColumn);
-
         this.heapTab = new Tab("heap");
     }
 
@@ -226,15 +225,13 @@ public class Main extends Application {
         this.noProgramStatesText = new TextField("0");
         this.noProgramsBox = new HBox(this.noProgramStatesTitle, this.noProgramStatesText);
 
-        this.selectedProgramIndex = 0;
+        //this.selectedProgramIndex = 0;
         this.programList = new ListView<String>(FXCollections.observableArrayList(this.programs));
-        this.programList.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number oldIndex, Number newIndex) {
-                selectedProgramIndex = (Integer) newIndex;
-                getProgram();
-            }
-        });
+        this.programList.getSelectionModel().selectedIndexProperty().addListener(
+            (observableValue, oldIndex, newIndex) -> {
+                //selectedProgramIndex = (Integer) newIndex;
+                this.getProgram((Integer) newIndex);
+            });
         this.programBox = new VBox(this.noProgramsBox,
                 this.programList);
 
@@ -242,15 +239,16 @@ public class Main extends Application {
         this.programTab.setContent(this.programBox);
     }
 
-    private void getProgram() {
+    private void getProgram(Integer selectedProgramIndex) {
         this.ctrl.clearAll();
-        Statement originalProgram = this.input(this.selectedProgramIndex);
+        Statement originalProgram = this.input(selectedProgramIndex);
         this.updateProgramTab();
         try {
             originalProgram.typeCheck(new map<String, Type>());
             this.ctrl.addStatement(originalProgram);
         } catch (exception exception) {
-            new Alert(AlertType.ERROR, "An error has occured :\n\t" + exception.getMessage()).showAndWait();
+            new Alert( AlertType.ERROR, "An error has occured :\n\t" + exception.getMessage() ).showAndWait();
+            return;
         }
     }
 
@@ -385,71 +383,79 @@ public class Main extends Application {
     }
 
     private void updateExecutionTab() {
-        ArrayList<String> executionStackStrings = new ArrayList<String>();
+        List<String> executionStackStrings = null;
         try {
-            ArrayList<Statement> executionList = this.repo.getProgram(this.selectedProgramStateID).getExecutionStack().toArrayList();
-            for (Statement current : executionList) {
-                executionStackStrings.add(current.toString());
-            }
-        } catch (exception ignored) { }
+            executionStackStrings = this.repo.getProgram(this.selectedProgramStateID)
+                .getExecutionStack().toArrayList().stream()
+                .map(Statement::toString)
+                .collect(Collectors.toList());
+        } catch (exception exception) {
+            new Alert(AlertType.ERROR, "No Program State Selected :\n\t" + exception.toString()).showAndWait();
+            return;
+        }
+
 
         this.executionList = new ListView<String>(FXCollections.observableArrayList(executionStackStrings));
         this.executionTab.setContent(this.executionList);
     }
 
     private void updateSymbolTab() {
-        ArrayList<pair> symbolValues = new ArrayList<pair>();
+        List<pair> symbolValues = null;
         try {
-            mapInterface<String, Value> symbolTable = this.repo.getProgram(this.selectedProgramStateID).getSymbolTable();
-            for (Iterator<String> it = symbolTable.getKeys().iterator(); it.hasNext(); ) {
-                String name = it.next();
-                symbolValues.add(new pair(name, symbolTable.get(name).toString()));
-            }
-        } catch (exception ignored) { }
+            symbolValues =
+                this.repo.getProgram(this.selectedProgramStateID)
+                    .getSymbolTable().toHashMap().entrySet().stream()
+                    .map(element -> { return new pair(element.getKey(), element.getValue().toString()); })
+                    .collect(Collectors.toList());
+        } catch (exception exception) {
+            new Alert(AlertType.ERROR, "No Program State Selected :\n\t" + exception.toString()).showAndWait();
+            return;
+        }
 
-        this.symbolTable.getItems().removeAll();
+
+        this.symbolTable.getItems().clear();
         this.symbolTable.getItems().addAll(FXCollections.observableArrayList(symbolValues));
-        //this.symbolTable.setItems(FXCollections.observableArrayList(symbolValues));
         this.symbolTab.setContent(this.symbolTable);
     }
 
     private void updateProgramStateTab() {
-        ArrayList<Integer> programStateIDs = new ArrayList<Integer>();
-        for (Iterator<programState> it = this.repo.getProgramList().iterator(); it.hasNext(); ) {
-            programState element = it.next();
-            programStateIDs.add(element.getID());
-        }
+        List<Integer> programStateIDs = null;
+        programStateIDs =
+            this.repo.getProgramList()
+                .toArrayList().stream()
+                .map(programState::getID)
+                .collect(Collectors.toList());
 
         this.programStateList = new ListView<Integer>(FXCollections.observableArrayList(programStateIDs));
-        this.programStateList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Integer>() {
-                @Override
-                public void changed(ObservableValue<? extends Integer> observableValue, Integer oldID, Integer newID) {
-                    selectedProgramStateID = newID;
-                }
-            }
-        );
+        this.programStateList.getSelectionModel().selectedItemProperty().addListener(
+                (observableValue, oldID, newID) -> selectedProgramStateID = newID );
         this.programStateTab.setContent(this.programStateList);
     }
 
     private void updateFileTab() {
+        this.fileList = null;
         try {
             this.fileList = new ListView<String>(FXCollections.observableArrayList(
-                    this.repo.getCurrentProgram().getFileTable().getKeys().toArrayList() ));
+                    this.repo.getProgram(this.selectedProgramStateID).getFileTable().getKeys().toArrayList() ));
         } catch (exception exception) {
-            this.fileList = new ListView<String>();
+            new Alert(AlertType.ERROR, "No Program State Selected :\n\t" + exception.toString()).showAndWait();
+            return;
         }
 
         this.fileTab.setContent(this.fileList);
     }
 
     private void updateOutputTab() {
-        ArrayList<String> outputStrings = new ArrayList<String>();
+        List<String> outputStrings = null;
         try {
-            for (Iterator<Value> it = this.repo.getCurrentProgram().getOutput().iterator(); it.hasNext(); ) {
-                Value element = it.next();
-                outputStrings.add(element.toString());
-            }
-        } catch (exception ignored) {
+            outputStrings =
+                this.repo.getProgram(this.selectedProgramStateID)
+                    .getOutput().toArrayList().stream()
+                    .map(Value::toString)
+                    .collect(Collectors.toList());
+        } catch (exception exception) {
+            new Alert(AlertType.ERROR, "No Program State Selected :\n\t" + exception.toString()).showAndWait();
+            return;
         }
 
         this.outputList = new ListView<String>(FXCollections.observableArrayList(outputStrings));
@@ -457,16 +463,19 @@ public class Main extends Application {
     }
 
     private void updateHeapTab() {
-        ArrayList<pair> heapValues = new ArrayList<pair> ();
+        List<pair> heapValues = null;
         try {
-            mapInterface<Integer, Value> heap = this.repo.getCurrentProgram().getHeap();
-            for (Iterator<Integer> it = heap.getKeys().iterator(); it.hasNext(); ) {
-                Integer index = it.next();
-                heapValues.add(new pair(index.toString(), heap.get(index).toString()));
-            }
-        } catch (exception ignored) { }
+            heapValues =
+                this.repo.getProgram(this.selectedProgramStateID)
+                    .getHeap().toHashMap().entrySet().stream()
+                    .map(element -> { return new pair(element.getKey().toString(), element.getValue().toString()); })
+                    .collect(Collectors.toList());
+        } catch (exception exception) {
+            new Alert(AlertType.ERROR, "No Program State Selected :\n\t" + exception.toString()).showAndWait();
+            return;
+        }
 
-        this.heapTable.getItems().removeAll();
+        this.heapTable.getItems().clear();
         this.heapTable.getItems().addAll(FXCollections.observableArrayList(heapValues));
         this.heapTab.setContent(this.heapTable);
     }
