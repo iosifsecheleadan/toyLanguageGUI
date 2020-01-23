@@ -2,17 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/2020-01-22.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2020-01-23.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/statement/executionStack/conditionalAssignStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/statement/latch/awaitStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/statement/latch/countDownStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/statement/latch/newLatchStatement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/collection/map/map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/collection/map/map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/collection/map/mapInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/collection/map/mapInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/view/sample/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/view/sample/Main$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/controller/controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/controller/controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/collection/programState/programState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/model/collection/programState/programState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/repository/repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/repository/repository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/toyLanguageGUI/view/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/toyLanguageGUI/view/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exception/exception.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exception/exception.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/collection/map/map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/collection/map/map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/collection/map/mapInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/collection/map/mapInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/collection/programState/programState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/collection/programState/programState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/statement/heap/writeHeapStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/statement/heap/writeHeapStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/sample/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,12 +120,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="model.collection.pair" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/view" />
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="model.statement.latch" />
+      <recent name="model.statement.executionStack" />
+      <recent name="model.collection.pair" />
     </key>
   </component>
   <component name="RunManager">
@@ -234,6 +239,9 @@
       <workItem from="1578917745466" duration="595000" />
       <workItem from="1579611100850" duration="814000" />
       <workItem from="1579686849743" duration="6255000" />
+      <workItem from="1579693283151" duration="1406000" />
+      <workItem from="1579695272651" duration="2605000" />
+      <workItem from="1579758201986" duration="13870000" />
     </task>
     <servers />
   </component>
@@ -246,34 +254,46 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="790" y="111" width="800" height="672" key="#Auto_Import" timestamp="1579763129984">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="790" y="111" width="800" height="672" key="#Auto_Import/0.0.1600.900@0.0.1600.900" timestamp="1579763129984" />
+    <state x="395" y="110" width="800" height="720" key="#Intentions" timestamp="1579762726712">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="395" y="110" width="800" height="720" key="#Intentions/0.0.1600.900@0.0.1600.900" timestamp="1579762726712" />
     <state x="934" y="255" width="522" height="383" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578077311663">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="934" y="255" width="522" height="383" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.900@0.0.1600.900" timestamp="1578077311663" />
-    <state x="556" y="153" width="478" height="587" key="#com.intellij.ide.util.MemberChooser" timestamp="1578308733797">
+    <state x="556" y="153" width="478" height="587" key="#com.intellij.ide.util.MemberChooser" timestamp="1579770855996">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="556" y="153" width="478" height="587" key="#com.intellij.ide.util.MemberChooser/0.0.1600.900@0.0.1600.900" timestamp="1578308733797" />
+    <state x="556" y="153" width="478" height="587" key="#com.intellij.ide.util.MemberChooser/0.0.1600.900@0.0.1600.900" timestamp="1579770855996" />
+    <state x="681" y="0" width="909" height="895" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579766616941">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="681" y="0" width="909" height="895" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.900@0.0.1600.900" timestamp="1579766616941" />
     <state x="583" y="193" width="424" height="506" key="FileChooserDialogImpl" timestamp="1579611801463">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="583" y="193" width="424" height="506" key="FileChooserDialogImpl/0.0.1600.900@0.0.1600.900" timestamp="1579611801463" />
-    <state width="1600" height="237" key="GridCell.Tab.0.bottom" timestamp="1579693107332">
+    <state width="1600" height="235" key="GridCell.Tab.0.bottom" timestamp="1579780164754">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state width="1600" height="237" key="GridCell.Tab.0.bottom/0.0.1600.900@0.0.1600.900" timestamp="1579693107332" />
-    <state width="1600" height="237" key="GridCell.Tab.0.center" timestamp="1579693107331">
+    <state width="1600" height="235" key="GridCell.Tab.0.bottom/0.0.1600.900@0.0.1600.900" timestamp="1579780164754" />
+    <state width="1600" height="235" key="GridCell.Tab.0.center" timestamp="1579780164754">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state width="1600" height="237" key="GridCell.Tab.0.center/0.0.1600.900@0.0.1600.900" timestamp="1579693107331" />
-    <state width="1600" height="237" key="GridCell.Tab.0.left" timestamp="1579693107331">
+    <state width="1600" height="235" key="GridCell.Tab.0.center/0.0.1600.900@0.0.1600.900" timestamp="1579780164754" />
+    <state width="1600" height="235" key="GridCell.Tab.0.left" timestamp="1579780164753">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state width="1600" height="237" key="GridCell.Tab.0.left/0.0.1600.900@0.0.1600.900" timestamp="1579693107331" />
-    <state width="1600" height="237" key="GridCell.Tab.0.right" timestamp="1579693107331">
+    <state width="1600" height="235" key="GridCell.Tab.0.left/0.0.1600.900@0.0.1600.900" timestamp="1579780164753" />
+    <state width="1600" height="235" key="GridCell.Tab.0.right" timestamp="1579780164754">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state width="1600" height="237" key="GridCell.Tab.0.right/0.0.1600.900@0.0.1600.900" timestamp="1579693107331" />
+    <state width="1600" height="235" key="GridCell.Tab.0.right/0.0.1600.900@0.0.1600.900" timestamp="1579780164754" />
     <state width="1600" height="293" key="GridCell.Tab.1.bottom" timestamp="1578307227960">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
@@ -294,9 +314,17 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="304" y="84" key="SettingsEditor/0.0.1600.900@0.0.1600.900" timestamp="1579611807528" />
-    <state x="62" y="193" width="672" height="678" key="search.everywhere.popup" timestamp="1578309250409">
+    <state x="216" y="154" width="1157" height="585" key="new project wizard" timestamp="1579694042632">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="62" y="193" width="672" height="678" key="search.everywhere.popup/0.0.1600.900@0.0.1600.900" timestamp="1578309250409" />
+    <state x="216" y="154" width="1157" height="585" key="new project wizard/0.0.1600.900@0.0.1600.900" timestamp="1579694042632" />
+    <state x="464" y="203" key="run.anything.popup" timestamp="1579762548404">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="464" y="203" key="run.anything.popup/0.0.1600.900@0.0.1600.900" timestamp="1579762548404" />
+    <state x="62" y="193" width="672" height="678" key="search.everywhere.popup" timestamp="1579772785447">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="62" y="193" width="672" height="678" key="search.everywhere.popup/0.0.1600.900@0.0.1600.900" timestamp="1579772785447" />
   </component>
 </project>

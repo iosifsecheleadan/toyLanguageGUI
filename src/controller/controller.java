@@ -71,8 +71,8 @@ public class controller implements controllerInterface {
         for(Iterator<programState> it = stateList.iterator(); it.hasNext(); ){
             programState state = it.next();
             if (! state.complete()) {
-                this.repo.logProgramState(state);
                 programState newState = state.oneStep();
+                this.repo.logProgramState(state);
                 if (newState != null) {
                     newStates.append(newState);
                 }

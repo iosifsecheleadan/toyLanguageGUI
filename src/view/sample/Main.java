@@ -26,6 +26,9 @@ import model.statement.file.openFileStatement;
 import model.statement.file.readFileStatement;
 import model.statement.heap.newStatement;
 import model.statement.heap.writeHeapStatement;
+import model.statement.latch.awaitStatement;
+import model.statement.latch.countDownStatement;
+import model.statement.latch.newLatchStatement;
 import model.statement.symbolTable.assignStatement;
 import model.statement.symbolTable.declarationStatement;
 import model.statement.symbolTable.printStatement;
@@ -61,6 +64,12 @@ public class Main extends Application {
         launch(args);
     }
 
+    @Override
+    public void stop() throws Exception {
+        this.ctrl.close();
+        super.stop();
+    }
+
     TabPane mainTabPane;
     Tab programTab;
     ListView<String> programList;
@@ -93,6 +102,11 @@ public class Main extends Application {
     Tab executionTab;
     ListView<String> executionList;
 
+    Tab latchTab;
+    TableView<pair> latchTable;
+    TableColumn latchLocationColumn;
+    TableColumn latchValueColumn;
+
     //Button addProgramButton;
     Button oneStepButton;
     Button allStepButton;
@@ -122,13 +136,25 @@ public class Main extends Application {
         this.programs.add("int v; v = 2; print(v)");
         this.programs.add("int a; int b; a = 2 + 3*5; b = a + 1; print(b)");
         this.programs.add("bool a; int v; a = true; (if a then v = 2 else v = 3); print(v)");
-        this.programs.add("string varf; varf=\"test.in\"; openRFile(varf); int varc; readFile(varf,varc); print(varc); readFile(varf,varc); print(varc); closeRFile(varf)");
+        this.programs.add("string varf; varf=\"test.in\"; openRFile(varf); int varc;\n" +
+                "readFile(varf,varc); print(varc); readFile(varf,varc); print(varc); closeRFile(varf)");
         this.programs.add("ref int v; new(v,20); ref ref int a; new(a,v); print(v); print(a)");
         this.programs.add("ref int v; new(v,20); ref ref int a; new(a,v); print(readHeap(v)); print(readHeap(readHeap(a)) + 5)");
         this.programs.add("ref int v; new(v,20); print(readHeap(v)); writeHeap(v,30); print(readHeap(v) + 5);");
         this.programs.add("ref int v; new(v,20); ref ref int a; new(a,v); new(v,30); print(readHeap(readHeap(a)))");
         this.programs.add("int v; v = 4; (while (v > 0) print(v); v = v - 1); print(v)");
-        this.programs.add("int v; ref int a; v = 10; new(a,22); fork( writeHeap(a,30); v = 32; print(v); print(readHeap(a)) ); print(v); print(readHeap(a))");
+        this.programs.add("int v; ref int a; v = 10; new(a,22);\n" +
+                "fork( writeHeap(a,30); v = 32; print(v); print(readHeap(a)) );\n" +
+                "print(v); print(readHeap(a))");
+        this.programs.add("ref int a; ref int b; int v; new(a,0); new(b,0);wh(a,1); wh(b,2);\n" +
+                "v = (rh(a) < rh(b)) ? 100 : 200; print(v);\n" +
+                "v = ((rh(b) - 2) > rh(a)) ? 100 : 200; print(v);");
+        this.programs.add("ref int v1; ref int v2; ref int v3; int cnt;\n" +
+                "new(v1,2); new(v2,3); new(v3,4); newLatch(cnt,rH(v2));\n" +
+                "fork(wh(v1,rh(v1)*10)); print(rh(v1)); countDown(cnt);\n" +
+                "fork(wh(v2,rh(v2)*10)); print(rh(v2)); countDown(cnt);\n" +
+                "fork(wh(v3,rh(v3)*10)); print(rh(v3)); countDown(cnt);\n" +
+                "await(cnt); print(100); countDown(cnt); print(100)");
     }
 
 
@@ -169,6 +195,7 @@ public class Main extends Application {
         this.instantiateProgramStateTab();
         this.instantiateSymbolTab();
         this.instantiateExecutionTab();
+        this.instatiateLatchTab();
 
         this.mainTabPane.getTabs().addAll(this.programTab,
                 this.programStateTab,
@@ -176,7 +203,8 @@ public class Main extends Application {
                 this.heapTab,
                 this.symbolTab,
                 this.outputTab,
-                this.fileTab);
+                this.fileTab,
+                this.latchTab);
     }
 
     private void instantiateExecutionTab() {
@@ -218,6 +246,16 @@ public class Main extends Application {
         this.heapValueColumn.setCellValueFactory(new PropertyValueFactory<>("second"));
         this.heapTable.getColumns().addAll(this.heapAdressColumn, this.heapValueColumn);
         this.heapTab = new Tab("heap");
+    }
+
+    private void instatiateLatchTab() {
+        this.latchTable = new TableView<pair>();
+        this.latchLocationColumn = new TableColumn("Location");
+        this.latchLocationColumn.setCellValueFactory(new PropertyValueFactory<>("first"));
+        this.latchValueColumn = new TableColumn("Value");
+        this.latchValueColumn.setCellValueFactory(new PropertyValueFactory<>("second"));
+        this.latchTable.getColumns().addAll(this.latchLocationColumn, this.latchValueColumn);
+        this.latchTab = new Tab("latch");
     }
 
     private void instantiateProgramTab() {
@@ -356,6 +394,58 @@ public class Main extends Application {
                         new printStatement(new variableExpression("v")),
                         new printStatement(new readHeapExpression(new variableExpression("a")))
                 )   )   )   )   )   );
+            case 10 :
+                return  new compoundStatement(
+                        new declarationStatement("a", new refType(new intType())), new compoundStatement(
+                        new declarationStatement("b", new refType(new intType())), new compoundStatement(
+                        new declarationStatement("v", new intType()), new compoundStatement(
+                        new newStatement("a", new valueExpression(new intValue(0))), new compoundStatement(
+                        new newStatement("b", new valueExpression(new intValue(0))), new compoundStatement(
+                        new writeHeapStatement("a", new valueExpression(new intValue(1))), new compoundStatement(
+                        new writeHeapStatement("b", new valueExpression(new intValue(2))), new compoundStatement(
+                        new conditionalAssignStatement("v", new relationalExpression(
+                                new readHeapExpression(new variableExpression("a")),
+                                new readHeapExpression(new variableExpression("b")), "<"),
+                                new valueExpression(new intValue(100)),
+                                new valueExpression(new intValue(200))), new compoundStatement(
+                        new printStatement(new variableExpression("v")), new compoundStatement(
+                        new conditionalAssignStatement("v", new relationalExpression(
+                                new arithmeticExpression(new readHeapExpression(new variableExpression("b")), new valueExpression(new intValue(2)), "-"),
+                                new readHeapExpression(new variableExpression("a")), ">"),
+                                new valueExpression(new intValue(100)),
+                                new valueExpression(new intValue(200))),
+                        new printStatement(new variableExpression("v"))
+                )   )   )   )   )   )   )   )   )   );
+            case 11 :
+                return  new compoundStatement(
+                        new declarationStatement("v1", new refType(new intType())), new compoundStatement(
+                        new declarationStatement("v2", new refType(new intType())), new compoundStatement(
+                        new declarationStatement("v3", new refType(new intType())),  new compoundStatement(
+                        new declarationStatement("cnt", new intType()), new compoundStatement(
+                        new newStatement("v1", new valueExpression(new intValue(2))), new compoundStatement(
+                        new newStatement("v2", new valueExpression(new intValue(3))), new compoundStatement(
+                        new newStatement("v3", new valueExpression(new intValue(4))), new compoundStatement(
+                        new newLatchStatement("cnt", new readHeapExpression(new variableExpression("v2"))), new compoundStatement(
+                        new forkStatement( new writeHeapStatement("v1",
+                                new arithmeticExpression( new readHeapExpression(new variableExpression("v1")), new valueExpression(new intValue(10)), "*"))
+                        ), new compoundStatement(
+                        new printStatement(new readHeapExpression(new variableExpression("v1"))), new compoundStatement(
+                        new countDownStatement("cnt"), new compoundStatement(
+                        new forkStatement( new writeHeapStatement(
+                                "v2", new arithmeticExpression(new readHeapExpression(new variableExpression("v2")), new valueExpression(new intValue(10)), "*"))
+                        ), new compoundStatement(
+                        new printStatement(new readHeapExpression(new variableExpression("v2"))), new compoundStatement(
+                        new countDownStatement("cnt"), new compoundStatement(
+                        new forkStatement( new writeHeapStatement(
+                                "v3", new arithmeticExpression(new readHeapExpression(new variableExpression("v3")), new valueExpression(new intValue(10)), "*"))
+                        ), new compoundStatement(
+                        new printStatement(new readHeapExpression(new variableExpression("v3"))),  new compoundStatement(
+                        new countDownStatement("cnt"), new compoundStatement(
+                        new awaitStatement("cnt"), new compoundStatement(
+                        new printStatement(new valueExpression(new intValue(100))), new compoundStatement(
+                        new countDownStatement("cnt"),
+                        new printStatement(new valueExpression(new intValue(100)))
+                )   )   )   )   )   )   )   )   )   )   )   )   )   )   )   )   )   )   )   );
             default:
                 return new noStatement();
         }
@@ -380,6 +470,10 @@ public class Main extends Application {
 
         this.heapTab.setOnSelectionChanged(event -> {
             this.updateHeapTab(); });
+
+        this.latchTab.setOnSelectionChanged(event -> {
+            this.updateLatchTab();
+        });
     }
 
     private void updateExecutionTab() {
@@ -478,6 +572,25 @@ public class Main extends Application {
         this.heapTable.getItems().clear();
         this.heapTable.getItems().addAll(FXCollections.observableArrayList(heapValues));
         this.heapTab.setContent(this.heapTable);
+    }
+
+    private void updateLatchTab() {
+        List<pair> latchValues = null;
+
+        try {
+            latchValues =
+                this.repo.getProgram(this.selectedProgramStateID)
+                    .getLatch().toHashMap().entrySet().stream()
+                    .map(element -> { return new pair(element.getKey().toString(), element.getValue().toString()); })
+                    .collect(Collectors.toList());
+        } catch (exception exception) {
+            new Alert(AlertType.ERROR, "No Program State Selected :\n\t" + exception.toString()).showAndWait();
+            return;
+        }
+
+        this.latchTable.getItems().clear();
+        this.latchTable.getItems().addAll(FXCollections.observableArrayList(latchValues));
+        this.latchTab.setContent(this.latchTable);
     }
 
     private void updateProgramTab() {

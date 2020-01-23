@@ -17,15 +17,15 @@ import java.util.Scanner;
 public class repository implements repositoryInterface {
     private Writer log;
     private list<programState> threads;
-    private String logFile;
+    private String logFileName;
 
     public repository() {
         this.threads = new list<programState>();
         //this.logFile = "/home/sechelea/Documents/programming/projects/java/advanced programming methods/toyLanguage/";
-        this.logFile = "";
+        this.logFileName = "";
         this.readLogFile();
         try {
-            this.log = new FileWriter(this.logFile, true);
+            this.log = new FileWriter(this.logFileName, true);
             this.newLog();
         } catch (IOException e) {
             e.printStackTrace();
@@ -34,16 +34,16 @@ public class repository implements repositoryInterface {
 
     public repository(String logFile) {
         this.threads = new list<programState>();
-        this.logFile = logFile;
+        this.logFileName = logFile;
         try {
-            this.log = new FileWriter(this.logFile, true);
+            this.log = new FileWriter(this.logFileName, true);
             this.newLog();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void newLog() throws IOException {
+    public void newLog() throws IOException {
         String newLog = "\n\n-----------------------------------------------------------------\n" +
                 "-------------------- " +
                 new SimpleDateFormat("E yyyy-MM-dd HH:mm:ss").format(new Date()) +
@@ -98,7 +98,7 @@ public class repository implements repositoryInterface {
         try {
             this.log.append(state.toString());
         } catch (IOException e) {
-            throw new exception("could not write to file at :\n\t" + this.logFile);
+            throw new exception("could not write to file at :\n\t" + this.logFileName);
         }
     }
 
@@ -116,7 +116,7 @@ public class repository implements repositoryInterface {
         try {
             this.log.append("\n-----------------------------------------------------------------\n\n\n");
         } catch (IOException e) {
-            throw new exception("could not write to file at :\n\t" + this.logFile);
+            throw new exception("could not write to file at :\n\t" + this.logFileName);
         }
     }
 
@@ -129,8 +129,8 @@ public class repository implements repositoryInterface {
     }
 
     private void readLogFile() {
-        System.out.println("Please give the log file name.\nIt will be at location :\n\t\" " + this.logFile + " \"");
+        System.out.println("Please give the log file name.\nIt will be at location :\n\t\" " + this.logFileName + " \"");
         Scanner console = new Scanner(System.in);
-        this.logFile += console.nextLine();
+        this.logFileName += console.nextLine();
     }
 }

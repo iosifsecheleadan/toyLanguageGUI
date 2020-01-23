@@ -1,0 +1,1068 @@
+
+
+-----------------------------------------------------------------
+-------------------- Thu 2020-01-23 12:07:34 --------------------
+-----------------------------------------------------------------
+
+
+
+-----------------------------------------------------------------
+-------------------- Thu 2020-01-23 13:42:46 --------------------
+-----------------------------------------------------------------
+
+Program ID : 0
+Execution Stack :
+[ref(int) b; int v; new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), ref(int) a]
+Symbol Table :
+{}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[ref(int) b; int v; new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(0, int)}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[int v; new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), ref(int) b]
+Symbol Table :
+{a=(0, int)}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[int v; new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(0, int), b=(0, int)}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), int v]
+Symbol Table :
+{a=(0, int), b=(0, int)}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(0, int), b=(0, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), new a = 0]
+Symbol Table :
+{a=(0, int), b=(0, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(0, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=0}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), new b = 0]
+Symbol Table :
+{a=(1, int), b=(0, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=0}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=0, 2=0}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), writeHeap(a, 1)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=0, 2=0}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=0}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), writeHeap(b, 2)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=0}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), v = readHeap(a) < readHeap(b) ? 100 : 200]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), if (readHeap(a) < readHeap(b)) then (v = 100) else (v = 200)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), v = 100]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[100]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[print(v), v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[100]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[print(v), if ((readHeap(b) - 2) > readHeap(a)) then (v = 100) else (v = 200)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[100]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[print(v), v = 200]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[100]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=200}
+Output :
+[100]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 0
+Execution Stack :
+[]
+Symbol Table :
+{a=(1, int), b=(2, int), v=200}
+Output :
+[100, 200]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[ref(int) b; int v; new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), ref(int) a]
+Symbol Table :
+{}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[ref(int) b; int v; new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(0, int)}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[int v; new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), ref(int) b]
+Symbol Table :
+{a=(0, int)}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[int v; new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(0, int), b=(0, int)}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), int v]
+Symbol Table :
+{a=(0, int), b=(0, int)}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(0, int), b=(0, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), new a = 0]
+Symbol Table :
+{a=(0, int), b=(0, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(0, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=0}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), new b = 0]
+Symbol Table :
+{a=(1, int), b=(0, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=0}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=0, 2=0}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), writeHeap(a, 1)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=0, 2=0}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=0}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), writeHeap(b, 2)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=0}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), v = readHeap(a) < readHeap(b) ? 100 : 200]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), if (readHeap(a) < readHeap(b)) then (v = 100) else (v = 200)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), v = 100]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[100]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[print(v), v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[100]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[print(v), if ((readHeap(b) - 2) > readHeap(a)) then (v = 100) else (v = 200)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[100]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[print(v), v = 200]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[100]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=200}
+Output :
+[100]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 2
+Execution Stack :
+[]
+Symbol Table :
+{a=(1, int), b=(2, int), v=200}
+Output :
+[100, 200]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[ref(int) b; int v; new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), ref(int) a]
+Symbol Table :
+{}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[ref(int) b; int v; new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(0, int)}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[int v; new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), ref(int) b]
+Symbol Table :
+{a=(0, int)}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[int v; new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(0, int), b=(0, int)}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), int v]
+Symbol Table :
+{a=(0, int), b=(0, int)}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[new a = 0; new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(0, int), b=(0, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), new a = 0]
+Symbol Table :
+{a=(0, int), b=(0, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[new b = 0; writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(0, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=0}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), new b = 0]
+Symbol Table :
+{a=(1, int), b=(0, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=0}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[writeHeap(a, 1); writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=0, 2=0}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), writeHeap(a, 1)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=0, 2=0}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[writeHeap(b, 2); v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=0}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), writeHeap(b, 2)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=0}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[v = readHeap(a) < readHeap(b) ? 100 : 200; print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), v = readHeap(a) < readHeap(b) ? 100 : 200]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), if (readHeap(a) < readHeap(b)) then (v = 100) else (v = 200)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), v = 100]
+Symbol Table :
+{a=(1, int), b=(2, int), v=0}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[print(v); v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v), print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200; print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[100]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[print(v), v = (readHeap(b) - 2) > readHeap(a) ? 100 : 200]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[100]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[print(v), if ((readHeap(b) - 2) > readHeap(a)) then (v = 100) else (v = 200)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[100]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[print(v), v = 200]
+Symbol Table :
+{a=(1, int), b=(2, int), v=100}
+Output :
+[100]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[print(v)]
+Symbol Table :
+{a=(1, int), b=(2, int), v=200}
+Output :
+[100]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+Program ID : 4
+Execution Stack :
+[]
+Symbol Table :
+{a=(1, int), b=(2, int), v=200}
+Output :
+[100, 200]
+File Table :
+{}
+Heap : 
+{1=1, 2=2}
+Latch : 
+{}
+
+
+
+-----------------------------------------------------------------
+-------------------- Thu 2020-01-23 13:48:05 --------------------
+-----------------------------------------------------------------
+

@@ -9,6 +9,7 @@ import model.collection.stack.stack;
 import model.collection.stack.stackInterface;
 import model.statement.Statement;
 import model.value.Value;
+import model.value.intValue;
 
 import java.io.BufferedReader;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -16,6 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class programState {
     private int heapIndex;
+    private int latchIndex;
     private int thisID;
     private static AtomicInteger id = new AtomicInteger(0);
 
@@ -24,17 +26,20 @@ public class programState {
     private listInterface<Value> output;
     private mapInterface<String, BufferedReader> fileTable;
     private mapInterface<Integer, Value> heap;
+    private mapInterface<Integer, intValue> latch;
 
     private Statement originalProgram;
 
     public programState(Statement originalProgram) {
         this.heapIndex = 1;
+        this.latchIndex = 1;
 
         this.executionStack = new stack<Statement>();
         this.symbolTable = new map<String, Value>();
         this.output = new list<Value>();
         this.fileTable = new map<String, BufferedReader>();
         this.heap = new map<Integer, Value>();
+        this.latch = new map<Integer, intValue>();
 
         this.originalProgram = originalProgram.copy();
         executionStack.push(this.originalProgram);
@@ -48,6 +53,7 @@ public class programState {
                         mapInterface<Integer, Value> heap,
                         Statement originalProgram) {
         this.heapIndex = 1;
+        this.latchIndex = 1;
 
         this.executionStack = executionStack;
         this.symbolTable = symbolTable;
@@ -66,7 +72,8 @@ public class programState {
                 "Symbol Table :\n" + this.symbolTable.toString() + "\n" +
                 "Output :\n" + this.output.toString() + "\n" +
                 "File Table :\n" + this.fileTable.toString() + "\n" +
-                "Heap : \n" + this.heap.toString() + "\n\n";
+                "Heap : \n" + this.heap.toString() + "\n" +
+                "Latch : \n" + this.latch.toString() + "\n\n";
     }
 
     public stackInterface<Statement> getExecutionStack() {
@@ -90,10 +97,19 @@ public class programState {
         return this.heap;
     }
 
+    public mapInterface<Integer, intValue> getLatch() {
+        return this.latch;
+    }
     public int insertToHeap(Value value) {
         this.heap.put(this.heapIndex, value);
         this.heapIndex += 1;
         return this.heapIndex;
+    }
+
+    public int insertToLatch(intValue value) {
+        this.latch.put(this.latchIndex, value);
+        this.latchIndex += 1;
+        return this.latchIndex;
     }
 
     public void setHeap(mapInterface<Integer, Value> heap) {
@@ -115,6 +131,8 @@ public class programState {
     public Integer getID() {
         return this.thisID;
     }
+
+
 
     //set any field
 }

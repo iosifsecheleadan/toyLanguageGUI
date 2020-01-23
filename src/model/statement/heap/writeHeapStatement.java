@@ -12,8 +12,8 @@ import model.value.refValue;
 
 
 public class writeHeapStatement implements Statement {
-    private Expression expression;
     private String identifier;
+    private Expression expression;
 
     public writeHeapStatement(String identifier, Expression expression) {
         this.expression = expression;
